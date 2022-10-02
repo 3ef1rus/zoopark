@@ -1,5 +1,5 @@
 use zoopark;
-CREATE TABLE zooparkForTrade
+CREATE TABLE ZooparkForTrade
 (
     zooparkID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     -- primary key column
@@ -61,7 +61,7 @@ CREATE TABLE Exchanges
     [Whom take] varchar (100) NOT NULL,
     [Date exchange] varchar (50) NOT NULL,
     [Number exchange] varchar (50) NOT NULL,
-    zooparkID INT REFERENCES zooparkForTrade (zooparkID)
+    zooparkID INT REFERENCES ZooparkForTrade (zooparkID)
 );
 CREATE TABLE MedicalCard
 (
