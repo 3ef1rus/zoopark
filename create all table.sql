@@ -1,7 +1,7 @@
 use zoopark;
 CREATE TABLE ZooparkForTrade
 (
-    zooparkID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    zooparkID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Name] varchar(100) NOT NULL ,
     [Adress] varchar (100) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE ZooparkForTrade
 );
 CREATE TABLE Suppliers
 (
-    supplierID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    supplierID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Name] varchar(100) NOT NULL,
     [Type feed] varchar(100) NOT NULL,
@@ -19,14 +19,14 @@ CREATE TABLE Suppliers
 );
 CREATE TABLE Vaccinations
 (
-    vaccinationID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    vaccinationID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Name] varchar(100) NOT NULL,
     [Date] varchar(100) NOT NULL
 );
 CREATE TABLE Disease
 (
-    diseaseID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    diseaseID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Name] varchar(100) NOT NULL,
     [Date start] varchar(100) NOT NULL,
@@ -34,19 +34,19 @@ CREATE TABLE Disease
 );
 CREATE TABLE InteractionTypes
 (
-    interactionTypeID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    interactionTypeID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [InteractionTypes] varchar(100) NOT NULL
 );
 CREATE TABLE Jobs
 (
-    jobID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    jobID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Name] varchar(100) NOT NULL
 );
 CREATE TABLE Cells
 (
-    cellID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    cellID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Number cell] varchar(100) NOT NULL,
     [Number animal] varchar(100) NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE Cells
 );
 CREATE TABLE Exchanges
 (
-    exchangeID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    exchangeID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Whom give] varchar(100) NOT NULL ,
     [Whom take] varchar (100) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE Exchanges
 );
 CREATE TABLE MedicalCard
 (
-    medicalCardID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    medicalCardID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Сompatibility] varchar(100) NOT NULL,
     [Number Medical Card] varchar(100) NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE MedicalCard
 );
 CREATE TABLE Feeds
 (
-    feedID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    feedID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Name] varchar(100) NOT NULL,
     [Amount] varchar(100) NOT NULL,
@@ -84,14 +84,14 @@ CREATE TABLE Feeds
 );
 CREATE TABLE FoodTypes
 (
-    foodTypeID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    foodTypeID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Food type] varchar(100) NOT NULL,
     feedID INT REFERENCES Feeds (feedID)
 );
 CREATE TABLE Types
 (
-    typeID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    typeID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Сompatibility] varchar(100) NOT NULL,
     [Special] varchar(100) NOT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE Types
 );
 CREATE TABLE PassportAnimal
 (
-    passportAnimaID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    passportAnimaID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Name] varchar(100) NOT NULL,
     [Sex] varchar(100) NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE PassportAnimal
 );
 CREATE TABLE Responsibility
 (
-    responsibilityID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    responsibilityID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Date start] varchar(100) NOT NULL,
     [Date end] varchar(100) NOT NULL,
@@ -123,7 +123,7 @@ CREATE TABLE Responsibility
 );
 CREATE TABLE Employee
 (
-    employeeID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    employeeID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Salarity] varchar(100) NOT NULL ,
     [Sex] varchar (100) NOT NULL,
@@ -136,7 +136,7 @@ CREATE TABLE Employee
 );
 CREATE TABLE Animal
 (
-    animalID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    animalID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Weigth] varchar(100) NOT NULL ,
     [Hight] varchar (100) NOT NULL,
@@ -148,7 +148,7 @@ CREATE TABLE Animal
 );
 CREATE TABLE Mainzoopark
 (
-    zooparkID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    zooparkID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Adress] varchar(100) NOT NULL ,
     [Name] varchar (100) NOT NULL,
