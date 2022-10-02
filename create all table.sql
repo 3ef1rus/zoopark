@@ -48,7 +48,7 @@ CREATE TABLE Cells
     [Number cell] varchar(100) NOT NULL,
     [Amount animals] varchar(100) NOT NULL,
     [Warm] varchar (100) NOT NULL,
-    [Types animal] varchar (100) NOT NULL
+    [Types animal] varchar (500) NOT NULL
 );
 CREATE TABLE Exchanges
 (
@@ -130,7 +130,7 @@ CREATE TABLE Employee
     [Experience] varchar (100) NOT NULL,
     jobID INT REFERENCES Jobs (jobID),
     responsibilityID INT REFERENCES Responsibility (responsibilityID),
-    interactionTypeID INT REFERENCES InteractionTypes (interactionTypeID)
+    interactionFamilyID INT REFERENCES InteractionFamily (interactionFamilyID)
 );
 CREATE TABLE Animal
 (
