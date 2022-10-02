@@ -3,14 +3,14 @@ CREATE TABLE zooparkForTrade
     zooparkID INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- primary key column
     Name varchar(100) NOT NULL ,
     Adress varchar (100) NOT NULL,
-    Number varchar (50) NOT NULL,
+    Number varchar (50) NOT NULL
 );
 CREATE TABLE Exchanges
 (
     exchangeID INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- primary key column
     [Whom give] varchar(100) NOT NULL ,
     [Whom take] varchar (100) NOT NULL,
-    [Data exchange] varchar (50) NOT NULL,
+    [Date exchange] varchar (50) NOT NULL,
     [Number exchange] varchar (50) NOT NULL,
     zooparkID INT REFERENCES Exchanges (zooparkID)
 );
@@ -29,7 +29,7 @@ CREATE TABLE Animal
     animalID INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- primary key column
     [Weigth] varchar(100) NOT NULL ,
     [Hight] varchar (100) NOT NULL,
-    [Data join] varchar (100) NOT NULL,
+    [Date join] varchar (100) NOT NULL,
     [Warm] boolean NOT NULL,
     [Move] boolean NOT NULL,
     exchangeID INT REFERENCES Exchanges (exchangeID)
@@ -63,8 +63,8 @@ CREATE TABLE Cells
 CREATE TABLE Responsibility
 (
     responsibilityID INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- primary key column
-    [Data start] varchar(100) NOT NULL,
-    [Data end] varchar(100) NOT NULL,
+    [Date start] varchar(100) NOT NULL,
+    [Date end] varchar(100) NOT NULL,
     [Warm] boolean NOT NULL,
     exchangeID INT REFERENCES Exchanges (exchangeID)-
 );
@@ -93,6 +93,19 @@ CREATE TABLE MedicalCard
     exchangeID INT REFERENCES Exchanges (exchangeID)-
     exchangeID INT REFERENCES Exchanges (exchangeID)-
 );
+CREATE TABLE Vaccinations
+(
+    vaccinationID INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- primary key column
+    [Name] varchar(100) NOT NULL,
+    [Date] varchar(100) NOT NULL
+);
+CREATE TABLE Disease
+(
+    diseaseID INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- primary key column
+    [Name] varchar(100) NOT NULL,
+    [Date start] varchar(100) NOT NULL,
+    [Date end] varchar(100) NOT NULL
+);
 CREATE TABLE Types
 (
     MedicalCardID INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- primary key column
@@ -101,8 +114,22 @@ CREATE TABLE Types
     [Name type] varchar(100) NOT NULL,
     [Family] varchar(100) NOT NULL,
     exchangeID INT REFERENCES Exchanges (exchangeID)-
+);
+CREATE TABLE FoodTypes
+(
+    foodTypeID INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- primary key column
+    [Food type] varchar(100) NOT NULL,
     exchangeID INT REFERENCES Exchanges (exchangeID)-
 );
-
-
+CREATE TABLE Feeds
+(
+    feedID INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- primary key column
+    [Name] varchar(100) NOT NULL,
+    [Amount] varchar(100) NOT NULL,
+    [Food type] varchar(100) NOT NULL,
+    [Price] varchar(100) NOT NULL,
+    [Date receiving] varchar(100) NOT NULL,
+    exchangeID INT REFERENCES Exchanges (exchangeID)-
+    exchangeID INT REFERENCES Exchanges (exchangeID)-
+);
 GO
