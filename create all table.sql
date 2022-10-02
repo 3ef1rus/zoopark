@@ -23,17 +23,33 @@ CREATE TABLE Vaccinations
     -- primary key column
     [Name] varchar(100) NOT NULL
 );
+CREATE TABLE VaccinationsList
+(
+    vaccinationListID INT NOT NULL PRIMARY KEY IDENTITY,
+    -- primary key column
+    [Date] varchar(100) NOT NULL,
+    [idMedCard] varchar(100) NOT NULL,
+    vaccinationID INT REFERENCES Vaccinations (vaccinationID)
+);
 CREATE TABLE Disease
 (
     diseaseID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Name] varchar(100) NOT NULL,
 );
-CREATE TABLE InteractionFamily
+CREATE TABLE DiseaseList
 (
-    interactionFamilyID INT NOT NULL PRIMARY KEY IDENTITY,
+    diseaseListID INT NOT NULL PRIMARY KEY IDENTITY,
+    [Disease period] varchar(100) NOT NULL,
+    [idMedCard] varchar(100) NOT NULL,
+    diseaseID INT REFERENCES Disease (diseaseID)
+);
+CREATE TABLE InteractionFamilyList
+(
+    interactionFamilyListID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
-    [Interaction Family] varchar(100) NOT NULL
+    employeeID INT REFERENCES Employee (employeeID),
+    typeID INT REFERENCES Types (typeID)
 );
 CREATE TABLE Jobs
 (
@@ -47,8 +63,7 @@ CREATE TABLE Cells
     -- primary key column
     [Number cell] varchar(100) NOT NULL,
     [Amount animals] varchar(100) NOT NULL,
-    [Warm] varchar (100) NOT NULL,
-    [Types animal] varchar (500) NOT NULL
+    [Warm] varchar (100) NOT NULL
 );
 CREATE TABLE Exchanges
 (
@@ -65,11 +80,7 @@ CREATE TABLE MedicalCard
     medicalCardID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Number Medical Card] varchar(100) NOT NULL,
-    [Сompatibility] varchar(100) NOT NULL,
-    [Date Vaccinations] varchar(100) NOT NULL,
-    [Disease period] varchar(100) NOT NULL,
-    vaccinationID INT REFERENCES Vaccinations (vaccinationID),
-    diseaseID INT REFERENCES Disease (diseaseID)
+    [Сompatibility] varchar(100) NOT NULL
 );
 CREATE TABLE Feeds
 (
@@ -111,6 +122,13 @@ CREATE TABLE PassportAnimal
     MedicalCardID INT REFERENCES MedicalCard (MedicalCardID),
     typeID INT REFERENCES Types (typeID)
 );
+CREATE TABLE ResponsibilityList
+(
+    responsibilityListID INT NOT NULL PRIMARY KEY IDENTITY,
+    -- primary key column
+    employeeID INT REFERENCES Employee (employeeID),
+    responsibilityID INT REFERENCES Responsibility (responsibilityID)
+);
 CREATE TABLE Responsibility
 (
     responsibilityID INT NOT NULL PRIMARY KEY IDENTITY,
@@ -129,8 +147,6 @@ CREATE TABLE Employee
     [Age] varchar (100) NOT NULL,
     [Experience] varchar (100) NOT NULL,
     jobID INT REFERENCES Jobs (jobID),
-    responsibilityID INT REFERENCES Responsibility (responsibilityID),
-    interactionFamilyID INT REFERENCES InteractionFamily (interactionFamilyID)
 );
 CREATE TABLE Animal
 (
@@ -143,6 +159,13 @@ CREATE TABLE Animal
     [Move] varchar (100) NOT NULL,
     cellID INT REFERENCES Cells (cellID),
     passportID INT REFERENCES PassportAnimal (passportAnimaID)
+);
+CREATE TABLE ListAnimalTypeInCell
+(
+    listAnimalTypeInCellID INT NOT NULL PRIMARY KEY IDENTITY,
+    -- primary key column
+    cellID INT REFERENCES Cells (cellID),
+    typeID INT REFERENCES Types (typeID)
 );
 CREATE TABLE Mainzoopark
 (
