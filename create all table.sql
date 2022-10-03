@@ -182,4 +182,12 @@ CREATE TABLE Mainzoopark
     animalID INT REFERENCES Animal (animalID),
     employeeID INT REFERENCES Employee (employeeID)
 );
+CREATE TABLE Access
+(
+    accessID INT NOT NULL PRIMARY KEY IDENTITY,
+    -- primary key column
+    [Access] varchar(100) NOT NULL,
+    employeeID INT REFERENCES Employee (employeeID),
+    typeID INT REFERENCES Types (typeID)
+);
 GO
