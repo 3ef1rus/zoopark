@@ -5,5 +5,5 @@ WHERE
     
   ( Employee.[employeeID]=Access.[employeeID] AND Types.[typeID]=Access.[typeID]) and
     Jobs.jobID=Employee.jobID AND
-    Types.[Name type]='Азиатский лев'
+    Types.[Name type]='Амурский тигр'
 GO
