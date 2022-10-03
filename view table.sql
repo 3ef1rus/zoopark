@@ -1,3 +1,3 @@
 use zoopark
-SELECT * FROM ZooparkForTrade;
+SELECT * FROM Types;
 GO
