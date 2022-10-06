@@ -56,7 +56,7 @@ CREATE TABLE Employee
     employeeID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Full name] varchar (100) NOT NULL,
-    [Salarity] varchar(100) NOT NULL ,
+    [Salarity] numeric(10) NOT NULL ,
     [Sex] varchar (100) NOT NULL,
     [Age] varchar (100) NOT NULL,
     [Experience] varchar (100) NOT NULL,
