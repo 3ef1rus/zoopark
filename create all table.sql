@@ -84,7 +84,7 @@ CREATE TABLE Types
     typeID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Name type] varchar(100) NOT NULL,
-    [Ñompatibility] varchar(100) NOT NULL,
+    [Compatibility] varchar(100) NOT NULL,
     [Special] varchar(100) NOT NULL,
     [Family] varchar(100) NOT NULL,
     foodTypeID INT REFERENCES FoodTypes (foodTypeID)
@@ -120,7 +120,7 @@ CREATE TABLE MedicalCard
     medicalCardID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Number Medical Card] varchar(100) NOT NULL,
-    [Ñompatibility] varchar(100) NOT NULL
+    [ï¿½ompatibility] varchar(100) NOT NULL
 );
 
 CREATE TABLE PassportAnimal
