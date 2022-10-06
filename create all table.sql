@@ -120,7 +120,7 @@ CREATE TABLE MedicalCard
     medicalCardID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Number Medical Card] varchar(100) NOT NULL,
-    [�ompatibility] varchar(100) NOT NULL
+    [Сompatibility] varchar(100) NOT NULL
 );
 
 CREATE TABLE PassportAnimal
