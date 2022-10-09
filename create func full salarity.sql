@@ -1,9 +1,8 @@
-
 CREATE FUNCTION GetFullSalarity (@name VARCHAR(100))
-RETURNS numeric(10)
+RETURNS VARCHAR(100)
 BEGIN
-DECLARE @FullSalarity numeric(10)
-SELECT @FullSalarity = Employee.[Salarity]
+DECLARE @FullSalarity VARCHAR(100)
+SELECT @FullSalarity = concat(Employee.[Salarity]*12,'$')
 FROM Employee
 WHERE Employee.[Full name]=@name;
 RETURN @FullSalarity

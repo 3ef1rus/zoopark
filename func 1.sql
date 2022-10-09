@@ -1,4 +1,2 @@
 use zoopark
-DECLARE @Summ NUMERIC(10)
-SET @Summ=dbo.GetFullSalarity('Буриличева Любовь Константиновна')
-PRINT @Summ
+select dbo.GetFullSalarity('Яблонская Анна Семеновна') as [Salarity per years]
