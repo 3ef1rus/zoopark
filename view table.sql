@@ -1,3 +1,3 @@
 use zoopark
-SELECT * FROM EmployeeHistory;
+SELECT * FROM Employee;
 GO
