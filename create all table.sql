@@ -190,4 +190,11 @@ CREATE TABLE Access
     employeeID INT REFERENCES Employee (employeeID),
     typeID INT REFERENCES Types (typeID)
 );
+CREATE TABLE EmployeeHistory
+(
+    Id INT IDENTITY PRIMARY KEY,
+    ProductId INT NOT NULL,
+    Operation NVARCHAR(200) NOT NULL,
+    CreateAt DATETIME NOT NULL DEFAULT GETDATE(),
+);
 GO
