@@ -393,6 +393,13 @@ INSERT INTO Mainzoopark
 VALUES
     ('Улица Пушкина , Дом Колотушкина','Зоопарк Радость','5')
 
+INSERT INTO register
+    ( -- columns to insert data into
+    [login_user],[password_user]
+    )
+VALUES
+    ('admin','admin')
+
 
 
 GO

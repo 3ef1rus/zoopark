@@ -196,4 +196,12 @@ CREATE TABLE EmployeeHistory
     Operation NVARCHAR(200) NOT NULL,
     CreateAt DATETIME NOT NULL DEFAULT GETDATE()
 );
+
+CREATE TABLE register
+(
+    useID INT NOT NULL IDENTITY PRIMARY KEY,
+    login_user VARCHAR(50) NOT NULL,
+    password_user VARCHAR(50) NOT NULL
+);
+
 GO
