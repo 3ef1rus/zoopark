@@ -1,0 +1,5 @@
+C:\Users\10kmm>sqlcmd -S DESKTOP-5IQ7VOD\SQLEXPRESS
+1> USE zoopark
+2> SELECT * FROM ZooparkForTrade
+3> GO
+Контекст ба
