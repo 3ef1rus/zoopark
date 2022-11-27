@@ -18,6 +18,13 @@ CREATE TABLE Suppliers
     [Amount] varchar(100) NOT NULL,
     [Price] varchar(100) NOT NULL
 );
+CREATE TABLE MedicalCard
+(
+    medicalCardID INT NOT NULL PRIMARY KEY IDENTITY,
+    -- primary key column
+    [Number Medical Card] varchar(100) NOT NULL,
+    [Сompatibility] varchar(100) NOT NULL
+);
 CREATE TABLE Vaccinations
 (
     vaccinationID INT NOT NULL PRIMARY KEY IDENTITY,
@@ -29,7 +36,7 @@ CREATE TABLE VaccinationsList
     vaccinationListID INT NOT NULL PRIMARY KEY IDENTITY,
     -- primary key column
     [Date] varchar(100) NOT NULL,
-    [idMedCard] varchar(100) NOT NULL,
+    idMedCard INT REFERENCES MedicalCard (medicalCardID),
     vaccinationID INT REFERENCES Vaccinations (vaccinationID)
 );
 CREATE TABLE Disease
@@ -42,7 +49,7 @@ CREATE TABLE DiseaseList
 (
     diseaseListID INT NOT NULL PRIMARY KEY IDENTITY,
     [Disease period] varchar(100) NOT NULL,
-    [idMedCard] varchar(100) NOT NULL,
+    idMedCard INT REFERENCES MedicalCard (medicalCardID),
     diseaseID INT REFERENCES Disease (diseaseID)
 );
 CREATE TABLE Jobs
@@ -115,13 +122,7 @@ CREATE TABLE Exchanges
     [Date exchange] varchar (50) NOT NULL,
     zooparkID INT REFERENCES ZooparkForTrade (zooparkID)
 );
-CREATE TABLE MedicalCard
-(
-    medicalCardID INT NOT NULL PRIMARY KEY IDENTITY,
-    -- primary key column
-    [Number Medical Card] varchar(100) NOT NULL,
-    [Сompatibility] varchar(100) NOT NULL
-);
+
 
 CREATE TABLE PassportAnimal
 (
